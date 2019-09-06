@@ -66,3 +66,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+To load data from the Random User Generator we are going to use superagent.
+
+For debouncing of the events (more on that in a bit), we’re going to use lodash:
+
+To add superagent and lodash.debounce to your project via npm run:
+
+### `$ npm install --save superagent lodash.debounce`
+
+The crux of our infinite scroll component is going to be an onscroll event that will check to see if the user has scrolled to the bottom of the page. Upon reaching the bottom of the page, our event will attempt to load additional content.
+
+When binding events, especially to scroll events, it’s good practice to debounce the events. Debouncing is when you only run a function once it a specified amount of time has passed since it was last called.
+
+Debouncing improves performance for your user by limiting how often an event if fired and also helps take some strain off of any services you may be calling from the event handler.
